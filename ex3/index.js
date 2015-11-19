@@ -10,14 +10,14 @@
 // });
 
 // //ES5
-// var fs = require("fs");
-// fs.readdir('fichiers',  function(err, data) {
-//   if (err) throw err;
+var fs = require("fs");
+fs.readdir('fichiers',  function(err, data) {
+  if (err) throw err;
   console.log("There is "+data.length+" files in this folder, they are :")
-//   data.forEach(function(elem) {
-//     console.log(elem);
-//   });
-// });
+  data.forEach(function(elem) {
+    console.log(elem);
+  });
+});
 // ES6
 // "use strict";
 // let fs = require("fs");
