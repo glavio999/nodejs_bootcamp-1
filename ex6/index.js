@@ -12,4 +12,4 @@ http.get("http://www.triptyk.eu", function(res) {
   res.on('error', function(err){
     console.log(err);
   });
-})
+});
