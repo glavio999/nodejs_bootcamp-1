@@ -12,7 +12,7 @@ var srv = http.createServer(function(req, res) {
     var routeFile = routes[req.url];
     fs.readFile(routeFile, function(err, data) {
       if (err) throw err
-      res.end(data);
+    }
     })
   } else {
     res.writeHead(404);
