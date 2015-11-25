@@ -1,0 +1,1 @@
+function a(){console.log("a")}function b(){console.log("b")}function moduleLoader(){return"i'm loading a module"}
