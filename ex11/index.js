@@ -2,7 +2,8 @@
 let express = require('express'),
 fs = require('fs'),
 http = require('http'),
-morgan = require('morgan');
+morgan = require('morgan'),
+bodyParser = require('body-parser');
 
 //ROUTES
 let restaurants =  require(`${__dirname}/routes/restaurants`);
@@ -15,6 +16,8 @@ app.use(morgan('combined',{stream:accessLogStream}));
 //USE STATIC ASSETS
 app.use(express.static(`${__dirname}/public`));
 
+//USER BODYPARSER FOR POST REQUESTS
+app.use(bodyParser.json());
 // SET APP ROUTES AS MIDDLEWARES
 app.use('/api/restaurants', restaurants);
 
