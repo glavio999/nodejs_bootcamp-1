@@ -1,0 +1,53 @@
+[
+    {
+        "photo" : "resto-1",
+        "name" : "Twenty Buns",
+        "shortname" : "twentybuns",
+        "phone" : "+32 65 36 32 22",
+        "web" : "https://www.facebook.com/twentybuns",
+        "rating" : 5.5,
+        "types" : ["Americaine"],
+        "address" : {
+            "street" : "Rue de la Clef",
+            "number" : "18",
+            "city" : "Mons",
+            "zip" : "7000",
+            "latitude" : 50.453526,
+            "longitude" : 3.952810
+        }
+    },
+    {
+        "photo" : "resto-2",
+        "name" : "EAT Enfin à table",
+        "shortname": "eat",
+        "phone" : "+32 65 82 23 52",
+        "web" : "http://www.enfinatable.net/",
+        "rating" : 5,
+        "types" : ["Café", "Sandwich", "Européenne"],
+        "address" : {
+            "street" : "Rue de la Houssiere",
+            "number" : "23",
+            "city" : "Bruxelles",
+            "zip" : "7000",
+            "latitude" : 50.453618,
+            "longitude" : 3.944202
+        }
+    },
+    {
+        "photo" : "resto-3",
+        "name" : "Osmose",
+        "shortname" : "osmose",
+        "phone" : "+32(0)65 87 56 03",
+        "web" : "http://www.restaurant-osmose.be/",
+        "rating" : 4.5,
+        "types" : ["Française", "Japonaise"],
+        "address" : {
+            "street" : "Rue d'Enghien",
+            "number" : "11",
+            "city" : "Ath",
+            "zip" : "7000",
+            "latitude" : 48.990228,
+            "longitude" : 2.27917
+        }
+    }
+]

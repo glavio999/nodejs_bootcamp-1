@@ -1,0 +1,30 @@
+<section class="detailsPage" ng-model="restaurants">
+    <a href="#/detail/{{prevItem}}" class="btn">&lt;</a>
+    <a href="#/detail/{{nextItem}}" class="btn">&gt;</a>
+    <aside>
+        <ng-map center="[{{restaurants[indexResto].address.latitude}}, {{restaurants[indexResto].address.longitude}}]">
+            <marker position="[{{restaurants[indexResto].address.latitude}}, {{restaurants[indexResto].address.longitude}}]" title="{{restaurants[indexResto].name}}"></marker>
+        </ng-map>
+    </aside>
+    <h3>{{restaurants[indexResto].name}}</h3>
+    <div>
+        <img ng-src="images/{{restaurants[indexResto].photo}}.png" alt="{{restaurants[indexResto].name}}" width="150" height="150" />
+        <p><strong>Note : </strong>{{restaurants[indexResto].rating}}</p>
+    </div>
+    <ul>
+        <li><strong>Téléphone : </strong>{{restaurants[indexResto].phone}}</li>
+        <li><strong>Site Web : </strong><a href="{{restaurants[indexResto].web}}">{{restaurants[indexResto].web}}</a></li>
+        <li><strong>Type de cuisine : </strong>
+            <ul>
+                <li ng-repeat="type in restaurants[indexResto].types">{{type}}</li>
+            </ul>
+        </li>
+        <li><strong>Adresse : </strong>
+            <ul>
+                <li>{{restaurants[indexResto].address.street}}, {{restaurants[indexResto].address.number}}</li>
+                <li>{{restaurants[indexResto].address.zip}} {{restaurants[indexResto].address.city}}</li>
+            </ul>
+        </li>
+    </ul>
+    <a href="index.html" class="btn">Retour</a>
+</section>

@@ -1,0 +1,74 @@
+<section class="restaurantsPage">
+    <nav>
+        <input type="text" ng-model="query" placeholder="Rechercher un restaurant par son nom" />
+
+        Ordonner par :
+        <select ng-model="restaurantOrder">
+            <option value="name">Nom</option>
+            <option value="address.city">Ville</option>
+        </select>
+
+        <label><input type="radio" name="direction" ng-model="direction" /> croissant</label>
+        <label><input type="radio" name="direction" ng-model="direction" value="reverse" /> décroissant</label>
+        <button class="btn" ng-click="showForm()">Ajouter un restaurant</button>
+    </nav>
+
+
+
+
+
+
+
+
+    <div ng-show="formHidden" class="addRestoDiv">
+        <form name="addRestoForm">
+            <p><label>Nom : </label><input type="text" ng-model="resto.name" placeholder="Nom" /></p>
+            <p><label>Photo : </label><input type="text" ng-model="resto.photo" /></p>
+            <p><label>Shortname : </label><input type="text" ng-model="resto.shortname" /></p>
+            <p><label>Phone : </label><input type="text" ng-model="resto.phone" /></p>
+            <p><label>Web : </label><input type="url" ng-model="resto.web" /></p>
+            <p><label>Rating : </label><input type="number" ng-model="resto.rating" /></p>
+            <p>
+                <ul>
+                    <li ng-repeat="item in types track by $index">{{item}} <button ng-click="removeType(types.indexOf(item))">-</button></li>
+                </ul>
+                <label>Types : </label><input type="text" ng-model="newResto" /><button ng-click="addType()">+</button>
+            </p>
+            <p><label>Street : </label><input type="text" ng-model="resto.address.street" /></p>
+            <p><label>Number : </label><input type="text" ng-model="resto.address.number" /></p>
+            <p><label>Zip : </label><input type="text" ng-model="resto.address.zip" /></p>
+            <p><label>City : </label><input type="text" ng-model="resto.address.city" /></p>
+            <p><label>Latitude : </label><input type="text" ng-model="resto.address.latitude" /></p>
+            <p><label>Longitude : </label><input type="text" ng-model="resto.address.longitude" /></p>
+            <input type="submit" value="Ajouter" ng-click="addResto(resto)" />
+        </form>
+    </div>
+
+
+
+
+
+
+    <article class="cf" ng-repeat="restaurant in restaurants | filter : {name:query} | orderBy: restaurantOrder : direction" >
+        <h3><a href="#/detail/{{restaurants.indexOf(restaurant)}}">{{restaurant.name}}</a></h3>
+        <div>
+            <img ng-src="images/{{restaurant.photo}}.png" alt="{{restaurant.name}}" width="150" height="150" />
+            <p><strong>Note : </strong>{{restaurant.rating}}</p>
+        </div>
+        <ul>
+            <li><strong>Téléphone : </strong>{{restaurant.phone}}</li>
+            <li><strong>Site Web : </strong><a href="{{restaurant.web}}">{{restaurant.web}}</a></li>
+            <li><strong>Type de cuisine : </strong>
+                <ul>
+                    <li ng-repeat="type in restaurant.types">{{type}}</li>
+                </ul>
+            </li>
+            <li><strong>Adresse : </strong>
+                <ul>
+                    <li>{{restaurant.address.street}}, {{restaurant.address.number}}</li>
+                    <li>{{restaurant.address.zip}} {{restaurant.address.city}}</li>
+                </ul>
+            </li>
+        </ul>
+    </article>
+</section>

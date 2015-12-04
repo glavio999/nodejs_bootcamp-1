@@ -1,0 +1,146 @@
+/* apply a natural box layout model to all elements, but allowing components to change */
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+	background-color: #234667;
+	font-family: "Century Gothic", sans-serif;
+}
+
+.container {
+	max-width: 960px;
+	margin: 0 auto;
+}
+
+.cf {
+  overflow: auto;
+  zoom: 1;
+}
+
+h1 {
+	font-size: 3em;
+	font-family: "Courgette";
+	color: #fff;
+}
+
+.btn {
+	display: inline-block;
+	text-decoration: none;
+	outline: none;
+	margin: 0 0.5em 1em 0;
+	padding: 1em;
+	background-color: #E93A57;
+	border: 0;
+	font-family: "Century Gothic", sans-serif;
+	font-weight: bold;
+	color: #fff;
+	border-radius: 6px;
+}
+
+.btn:hover {
+	cursor: pointer;
+	-webkit-box-shadow: 6px 6px 4px rgba(0,0,0,0.5);
+	box-shadow: 0 0 1px 1px rgba(0,0,0,0.5);
+}
+
+.addRestoDiv {
+	background-color: #fff;
+	margin: 1em 0;
+	padding: 1em;
+}
+
+section.detailsPage {
+	border: 1px solid #2E587F;
+	background-color: #fff;
+	border-radius: 0 12px;
+	padding: 1em;
+}
+
+nav {
+	background-color: #588a9d;
+	padding: 1em;
+	margin-bottom: 1em;
+}
+
+nav input[type="text"] {
+	border: 0;
+	font-size: 1em;
+	padding: 0.6em;
+	margin-bottom: 1em;
+	width: 100%;
+	outline: none;
+	font-family: "Century Gothic", sans-serif;
+}
+
+nav select {
+	font-size: 1em;
+	padding: 0.6em;
+	margin-right: 1em;
+}
+
+nav select option {
+	font-family: "Century Gothic", sans-serif;
+}
+
+article {
+	border: 1px solid #2E587F;
+	background-color: #fff;
+	/*background-color: #D8EDF0;*/
+	margin-bottom: 1em;
+	padding: 1em;
+	border-radius: 0 12px;
+}
+
+article h3, section.detailsPage h3 {
+	margin: 0 0 1em 0;
+}
+
+article h3 a {
+	color: #000;
+	text-decoration: none;
+}
+
+article h3 a:hover {
+	color: #588a9d;
+}
+
+article > div {
+	float: left;
+	margin-right: 1em;
+}
+
+article img, section.detailsPage img {
+	border: 6px solid #DADADA;
+}
+
+article img:hover, section.detailsPage img:hover {
+	border: 1px solid #1A334B;
+	cursor: pointer;
+}
+
+article > ul {
+	float: left;
+}
+
+article ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+article ul ul li {
+	position: relative;
+	left: 1em;
+}
+
+aside {
+	float: right;
+	width: 300px;
+	height: 300px;
+}
